@@ -2,7 +2,7 @@
 EXTENSION=wii
 
 # a list of external jars the extension needs to build and ship with
-EXTERNAL_JARS=bluecove-2.0.3.jar WiiRemoteJ.jar
+EXTERNAL_JARS=bluecove-2.1.0.jar WiiRemoteJ.jar
 
 # a space separated list of directories to include in the tarball
 DISTDIRS=

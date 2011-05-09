@@ -3,7 +3,7 @@ extensions [ wii ]
 to connect
   let id wii:connect
   ifelse( id != 999 ) [ ;; reports 999 if hasn't connected to anything
-    output-print word "Connected to remote, assigned id " id
+    ;output-print ( word "Connected to remote, assigned id " id )
     output-print ( word "There are now " wii:number-connected " remotes connected." )
     output-print ( word "Available remotes have ids " wii:ids "." )
   ] [
@@ -41,7 +41,11 @@ to plot-it
 end
 
 to setup
-  ca
+  ;; (for this model to work with NetLogo's new plotting features,
+  ;; __clear-all-and-reset-ticks should be replaced with clear-all at
+  ;; the beginning of your setup procedure and reset-ticks at the end
+  ;; of the procedure.)
+  __clear-all-and-reset-ticks
   crt 10 [
     setxy random-pxcor
           random-pycor
@@ -52,7 +56,7 @@ end
 GRAPHICS-WINDOW
 595
 20
-691
+840
 137
 3
 3
@@ -74,6 +78,7 @@ GRAPHICS-WINDOW
 0
 0
 ticks
+30.0
 
 BUTTON
 10
@@ -90,6 +95,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 BUTTON
 10
@@ -106,6 +112,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 BUTTON
 65
@@ -122,6 +129,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 BUTTON
 125
@@ -138,6 +146,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 BUTTON
 180
@@ -154,6 +163,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 TEXTBOX
 96
@@ -180,6 +190,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 BUTTON
 125
@@ -196,6 +207,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 BUTTON
 10
@@ -212,6 +224,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 TEXTBOX
 105
@@ -293,6 +306,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 PLOT
 250
@@ -308,12 +322,13 @@ NIL
 10.0
 true
 true
+"" ""
 PENS
-"x-accel" 1.0 0 -10899396 true
-"y-accel" 1.0 0 -13345367 true
-"z-accel" 1.0 0 -2674135 true
-"pitch" 1.0 0 -5825686 true
-"roll" 1.0 0 -14835848 true
+"x-accel" 1.0 0 -10899396 true "" ""
+"y-accel" 1.0 0 -13345367 true "" ""
+"z-accel" 1.0 0 -2674135 true "" ""
+"pitch" 1.0 0 -5825686 true "" ""
+"roll" 1.0 0 -14835848 true "" ""
 
 BUTTON
 125
@@ -330,6 +345,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 INPUTBOX
 170
@@ -481,53 +497,44 @@ Remote being watched by monitors and plot can be set here:
 1
 
 @#$#@#$#@
-VERSION
--------
+## VERSION
+
 $Id: WiimoteExamples.nlogo 45056 2009-12-06 20:08:07Z tisue $
 
+## WHAT IS IT?
 
-WHAT IS IT?
------------
 This section could give a general understanding of what the model is trying to show or explain.
 
+## HOW IT WORKS
 
-HOW IT WORKS
-------------
 This section could explain what rules the agents use to create the overall behavior of the model.
 
+## HOW TO USE IT
 
-HOW TO USE IT
--------------
 This section could explain how to use the model, including a description of each of the items in the interface tab.
 
+## THINGS TO NOTICE
 
-THINGS TO NOTICE
-----------------
 This section could give some ideas of things for the user to notice while running the model.
 
+## THINGS TO TRY
 
-THINGS TO TRY
--------------
 This section could give some ideas of things for the user to try to do (move sliders, switches, etc.) with the model.
 
+## EXTENDING THE MODEL
 
-EXTENDING THE MODEL
--------------------
 This section could give some ideas of things to add or change in the procedures tab to make the model more complicated, detailed, accurate, etc.
 
+## NETLOGO FEATURES
 
-NETLOGO FEATURES
-----------------
 This section could point out any especially interesting or unusual features of NetLogo that the model makes use of, particularly in the Procedures tab.  It might also point out places where workarounds were needed because of missing features.
 
+## RELATED MODELS
 
-RELATED MODELS
---------------
 This section could give the names of models in the NetLogo Models Library or elsewhere which are of related interest.
 
+## CREDITS AND REFERENCES
 
-CREDITS AND REFERENCES
-----------------------
 This section could contain a reference to the model's URL on the web if it has one, as well as any other necessary credits or references.
 @#$#@#$#@
 default
@@ -813,7 +820,7 @@ Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 
 @#$#@#$#@
-NetLogo 4.1RC7
+NetLogo 5.0beta2
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@

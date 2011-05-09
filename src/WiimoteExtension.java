@@ -162,7 +162,7 @@ import wiiremotej.event.WiiRemoteListener;
 		public Object report(Argument args[], Context context)
 				throws ExtensionException {
 
-            LogoList list = new LogoList();
+            LogoListBuilder list = new LogoListBuilder();
 
             for( Integer i = 0 ; i < wiiRemoteManager.getRemoteCount() ; i ++ ) {
                 if( wiiRemoteManager.getRemote(i).isConnected() ) {
@@ -170,7 +170,7 @@ import wiiremotej.event.WiiRemoteListener;
                 }
             }
 
-			return list;
+			return list.toLogoList();
 
 		}
 	}
